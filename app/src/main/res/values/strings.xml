@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Kingdom Quest</string>
+     <string name="intro">
+        Вот уже 20 лет в государстве нашем смута! Но наконец-то на престоле сильный король!
+        Лишь на вас народ уповает, государь!
+        Давайте-ка переименуем наше королевство, ведь впереди у нас великие свершения!</string>
+
+    <string name="write_name">Имя государя</string>
+    <string name="write_kingdom">Название королевства</string>
+
+
+    <string name="playing_title">==== Сводки ====</string>
+    <string name="playing_kingdom">Королевство:</string>
+    <string name="playing_king">Король:</string>
+    <string name="playing_gold">Золото:</string>
+    <string name="playing_population">Население:</string>
+    <string name="playing_satisfaction">Довольство:</string>
+    <string name="playing_army">Армия:</string>
+    <string name="playing_age">Возраст:</string>
+
+     <string name="button_text">В добрый путь!</string>
+</resources>

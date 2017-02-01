@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_playing"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.denis.kingdomquest.PlayingActivity">
+
+    <TextView
+        android:text="@string/playing_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/title"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:text="@string/playing_gold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/king_text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/gold"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:text="@string/playing_population"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/population"
+        android:layout_below="@+id/gold"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:text="@string/playing_satisfaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/satisfaction"
+        android:layout_below="@+id/army"
+        android:layout_toEndOf="@+id/age"
+        android:layout_toRightOf="@+id/age"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:text="@string/playing_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/age"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/satisfaction"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="@string/playing_army"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/army"
+        android:layout_below="@+id/king_text"
+        android:layout_alignLeft="@+id/satisfaction"
+        android:layout_alignStart="@+id/satisfaction"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:text="@string/playing_kingdom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/kingdom_text"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="@string/playing_king"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/king_text"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/kingdom_text"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="________________________________________________"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView20"
+        android:layout_below="@+id/age"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <Button
+        android:text="2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        android:textSize="10sp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/button1"
+        android:layout_toEndOf="@+id/button1" />
+
+    <Button
+        android:text="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1"
+        android:textSize="10sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="some situation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/situation"
+        android:textSize="14sp"
+        android:textStyle="normal|bold|italic"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/textView20"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        android:textSize="10sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:textSize="10sp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/button5"
+        android:layout_toStartOf="@+id/button5" />
+
+    <Button
+        android:text="3"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:textSize="10sp"
+        android:layout_width="wrap_content"
+        android:background="@mipmap/ic_launcher"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/kingdom_text"
+        android:layout_alignEnd="@+id/kingdom_text" />
+
+
+</RelativeLayout>
