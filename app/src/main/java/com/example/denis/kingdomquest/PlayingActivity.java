@@ -8,20 +8,43 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class PlayingActivity extends AppCompatActivity {
-    public Story story = new Story();
+    public Story story;
     public Kingdom k = new Kingdom();
     public int choosenVariant = 0;
     public int n = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playing);
         Intent i = getIntent();
         k.kingdomName = i.getStringExtra("kingdom_name");
+
+        story = new Story(this);
         nextKing();
+
         TextView sit = (TextView)findViewById(R.id.situation);
-        //sit.setText(story.situations[n].text);
+        sit.setText(story.situations[n].text);
+
+        TextView kdom = (TextView) findViewById(R.id.kingdom_text);
+        kdom.setText(getString(R.string.playing_kingdom)+" "+k.kingdomName);
+
+        TextView gol = (TextView)findViewById(R.id.gold);
+        gol.setText(getString(R.string.playing_gold)+" "+k.Gold);
+
+        TextView arm = (TextView)findViewById(R.id.army);
+        arm.setText(getString(R.string.playing_army)+" "+k.Army);
+
+        TextView pop = (TextView)findViewById(R.id.population);
+        pop.setText(getString(R.string.playing_population)+" "+k.Population);
+
+        TextView age = (TextView)findViewById(R.id.age);
+        age.setText(getString(R.string.playing_age)+" "+k.Age);
+
+        TextView sat = (TextView)findViewById(R.id.satisfaction);
+        sat.setText(getString(R.string.playing_satisfaction)+" "+k.Sat);
+
         createButtons(story.situations[n]);
 
 
@@ -34,31 +57,52 @@ public class PlayingActivity extends AppCompatActivity {
     }
 
     public void chooseOne(View view){
-        choosenVariant = 1;
+        choosenVariant = 0;
         nextSituation();
     }
 
     public void chooseTwo(View view){
-        choosenVariant = 2;
+        choosenVariant = 1;
         nextSituation();
     }
 
     public void chooseThree(View view){
-        choosenVariant = 3;
+        choosenVariant = 2;
         nextSituation();
     }
 
     public void chooseFour(View view){
-        choosenVariant = 4;
+        choosenVariant = 3;
         nextSituation();
     }
 
     public void chooseFive(View view){
-        choosenVariant = 5;
+        choosenVariant = 4;
         nextSituation();
     }
 
     public void createButtons( Situation s){
+        Button b3 = (Button) findViewById(R.id.button3);
+        Button b4 = (Button) findViewById(R.id.button4);
+        Button b5 = (Button) findViewById(R.id.button5);
+        switch (s.variants.length){
+            case 2:
+                b3.setVisibility(View.INVISIBLE);
+                b4.setVisibility(View.INVISIBLE);
+                b5.setVisibility(View.INVISIBLE);
+                break;
+            case 3:
+                b4.setVisibility(View.INVISIBLE);
+                b5.setVisibility(View.INVISIBLE);
+                break;
+            case 4:
+                b5.setVisibility(View.INVISIBLE);
+                break;
+            default:
+                b3.setVisibility(View.VISIBLE);
+                b4.setVisibility(View.VISIBLE);
+                b5.setVisibility(View.VISIBLE);
+        }
 
     }
 
@@ -82,6 +126,32 @@ public class PlayingActivity extends AppCompatActivity {
                 System.out.println("Другое королевство вторглось на нашу территорию! Нам нечем им ответить - наших войск недостаточно!");
                 break;
             default:
+            {
+                n++;
+
+                TextView sit = (TextView) findViewById(R.id.situation);
+                sit.setText(story.situations[n].text);
+
+                TextView kdom = (TextView) findViewById(R.id.kingdom_text);
+                kdom.setText(getString(R.string.playing_kingdom) + " " + k.kingdomName);
+
+                TextView gol = (TextView) findViewById(R.id.gold);
+                gol.setText(getString(R.string.playing_gold) + " " + k.Gold);
+
+                TextView arm = (TextView) findViewById(R.id.army);
+                arm.setText(getString(R.string.playing_army) + " " + k.Army);
+
+                TextView pop = (TextView) findViewById(R.id.population);
+                pop.setText(getString(R.string.playing_population) + " " + k.Population);
+
+                TextView age = (TextView) findViewById(R.id.age);
+                age.setText(getString(R.string.playing_age) + " " + k.Age);
+
+                TextView sat = (TextView) findViewById(R.id.satisfaction);
+                sat.setText(getString(R.string.playing_satisfaction) + " " + k.Sat);
+
+                createButtons(story.situations[n]);
+            }
 
         }
     }

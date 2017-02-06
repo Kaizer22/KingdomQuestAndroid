@@ -1,7 +1,12 @@
 package com.example.denis.kingdomquest;
 
-import java.io.File;
+
+import android.content.Context;
+import android.content.res.AssetManager;
+
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Scanner;
 
 /**
@@ -11,12 +16,13 @@ import java.util.Scanner;
 public class Story {
     public Situation situations[] = new Situation[11];
     //**                  Variant(int Gold, int Population, int Sat, int Army,int Age)
-    Story(){
+    Story(Context context){
         try{
-            File f = new File("test");
-            Scanner sc = new Scanner(f);
+            AssetManager am = context.getAssets();
+            InputStream in = am.open("test");
+            Scanner sc = new Scanner(in);
             int n = 0;
-            while(sc.hasNext() && n < situations.length){
+            while((sc.hasNext())  && (n < situations.length)){
                 situations[n] = new Situation(sc.nextLine(),sc.nextInt());
                 for (int i = 0; i < situations[n].variants.length ; i++){
                     sc.nextLine();
@@ -26,10 +32,11 @@ public class Story {
                 n++;
             }
             sc.close();
-        }catch(NullPointerException e) {
-            System.out.println("NPE");
+            in.close();
         }catch(FileNotFoundException e){
-            System.out.println("FNFE");
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -60,4 +67,6 @@ public class Story {
         }else
             return 0;
     }
+
+
 }
