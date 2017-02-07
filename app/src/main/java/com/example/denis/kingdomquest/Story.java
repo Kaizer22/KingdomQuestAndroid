@@ -16,9 +16,9 @@ import java.util.Scanner;
 public class Story {
     public Situation situations[] = new Situation[11];
     //**                  Variant(int Gold, int Population, int Sat, int Army,int Age)
-    Story(Context context){
+    Story(AssetManager am){
         try{
-            AssetManager am = context.getAssets();
+
             InputStream in = am.open("test");
             Scanner sc = new Scanner(in);
             int n = 0;

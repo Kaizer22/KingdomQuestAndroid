@@ -18,5 +18,19 @@
     <string name="playing_army">Армия:</string>
     <string name="playing_age">Возраст:</string>
 
-     <string name="button_text">В добрый путь!</string>
+    <string name="button_text">В добрый путь!</string>
+
+    <string name="game_over_1">Наша страна обнищала! Уже совсем скоро народу будет нечего есть! Я настоятельно
+        рекомендую вам отречься от престола, пока разгневанный народ не вышел на улицы.</string>
+    <string name="game_over_2">Народ недоволен! Вы что, не видете этого !?
+        Ваше правление принесло этим людям большие беды!</string>
+    <string name="game_over_3">Лоюди умирают или бегут из страны! Скоро вам будет некем править.</string>
+    <string name="game_over_4">Наш славный король умер! Он мог так много успеть сделать для королевства!</string>
+    <string name="game_over_5">Другое королевство вторглось на нашу территорию! Нам нечем им ответить - наших войск недостаточно!</string>
+
+    <string name="next_king_p1">Пока наследник был мал,</string>
+    <string name="next_king_p2">страной управлял регент. Как</string>
+    <string name="next_king_p3">вас зовут, сын короля</string>
+    <string name="next_king_p4">Ваше время пришло!</string>
 </resources>
+
